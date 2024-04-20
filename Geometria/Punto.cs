@@ -9,21 +9,21 @@ namespace Geometria
 {
     public class Punto
     {
-        private int _x;
-        private int _y;
-        public Punto(int x, int y) {
+        private double _x;
+        private double _y;
+        public Punto(double x, double y) {
             this._x = x;
             this._y = y;
         }
 
-        public int X {
+        public double X {
             get 
             { 
             return _x; 
             }    
         }
 
-        public int Y {
+        public double Y {
             get 
             { 
             return _y;  
