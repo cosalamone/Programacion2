@@ -25,8 +25,8 @@ namespace ClassLibrary03
                }
         }
 
-        public Viaje RegistrarViaje(int dia1, int dia2, int dia3, int dia4, int dia5, int dia6, int dia7) {
-            _viaje = new Viaje(dia1, dia2, dia3, dia4, dia5, dia6, dia7);
+        public Viaje RegistrarViaje(int[] viaje) {
+            _viaje = new Viaje(viaje);
             return _viaje;
         }
 

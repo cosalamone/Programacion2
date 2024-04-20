@@ -9,18 +9,21 @@ namespace POO_A01
     {
         static void Main(string[] args)
         {
-            string[] conductores = ["Carlos", "Maria", "Susana"];
 
-            Conductor conductor1 = new Conductor(conductores[0]);
-            Conductor conductor2 = new Conductor(conductores[1]);
-            Conductor conductor3 = new Conductor(conductores[2]);
+            Conductor[] conductores = new Conductor[3];
 
-            conductor1.RegistrarViaje(120, 233, 145, 325, 90, 123, 0);
-            conductor2.RegistrarViaje(234, 0, 0, 356, 222, 89, 152);
-            conductor3.RegistrarViaje(154, 254, 312, 78, 0, 198, 478);
+            conductores[0] = new Conductor("Carlos");
+            conductores[0].RegistrarViaje(new int[] { 120, 233, 145, 325, 90, 123, 0 });
 
+            conductores[1] = new Conductor("Maria");
+            conductores[1].RegistrarViaje(new int[] { 234, 0, 0, 356, 222, 89, 152 });
 
-            CalcularConductorConMasKm(conductor1, conductor2, conductor3);
+            conductores[2] = new Conductor("Susana");
+            conductores[2].RegistrarViaje(new int[] { 154, 254, 312, 78, 0, 198, 478 });
+
+            Console.WriteLine("El conductor que hizo más km en esa semana.", CalcularConductorConMasKm(conductores[0], conductores[1], conductores[2]));
+            Console.WriteLine("El conductor que hizo más km el día 3.", CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 3));
+            Console.WriteLine("El conductor que hizo más km el día 5.", CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 5));
 
         }
 
@@ -44,28 +47,25 @@ namespace POO_A01
             return conductorConMasKm;
         }
 
-        static string CalcularConductorConMasKmDia3(Conductor conductor1, Conductor conductor2, Conductor conductor3)
+        static string CalcularConductorConMasKmDia(Conductor conductor1, Conductor conductor2, Conductor conductor3, int dia)
         {
-            string conductorConMasKmDia3 = "";
+            string conductorConMasKmDia = "";
             int maxKmDia3 = 0;
 
             Conductor[] conductores = { conductor1, conductor2, conductor3 };
 
             foreach (Conductor conductor in conductores)
             {
-                int kmsDia3 = conductor.ObtenerKilometrosDia(3); // Método que deberás implementar en la clase Conductor
+                int kmsDia3 = conductor.ObtenerKilometrosDia(dia);
                 if (kmsDia3 > maxKmDia3)
                 {
                     maxKmDia3 = kmsDia3;
-                    conductorConMasKmDia3 = conductor.ConductorNombre;
+                    conductorConMasKmDia = conductor.ConductorNombre;
                 }
             }
 
-            return conductorConMasKmDia3;
+            return conductorConMasKmDia;
         }
 
-        static void CalcularConductorConMasKmDia5()
-        {
-        }
     }
 }
