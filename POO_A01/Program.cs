@@ -1,7 +1,6 @@
 ﻿// A01 - Vienen con sistema de auto-navegación
 
 using ClassLibrary03;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace POO_A01
 {
@@ -21,13 +20,14 @@ namespace POO_A01
             conductores[2] = new Conductor("Susana");
             conductores[2].RegistrarViaje(new int[] { 154, 254, 312, 78, 0, 198, 478 });
 
-            Console.WriteLine("El conductor que hizo más km en esa semana.", CalcularConductorConMasKm(conductores[0], conductores[1], conductores[2]));
-            Console.WriteLine("El conductor que hizo más km el día 3.", CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 3));
-            Console.WriteLine("El conductor que hizo más km el día 5.", CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 5));
+            Console.WriteLine($"El conductor que hizo más km en esa semana. {CalcularConductorConMasKm(conductores[0], conductores[1], conductores[2])}");
+            Console.WriteLine($"El conductor que hizo más km el día 3. {CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 3)}");
+            Console.WriteLine($"El conductor que hizo más km el día 5. {CalcularConductorConMasKmDia(conductores[0], conductores[1], conductores[2], 5)}");
 
         }
 
-        static string CalcularConductorConMasKm(Conductor conductor1, Conductor conductor2, Conductor conductor3) {
+        static string CalcularConductorConMasKm(Conductor conductor1, Conductor conductor2, Conductor conductor3)
+        {
 
             string conductorConMasKm = "";
             int maxKm = 0;
