@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Veterinaria
+namespace ClassLibraryVeterinaria
 {
     public class Mascota
     {

@@ -1,6 +1,6 @@
 ﻿// VETERINARIA
 
-using Veterinaria;
+using ClassLibraryVeterinaria;
 
 namespace POO_A02
 {
